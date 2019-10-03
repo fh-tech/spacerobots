@@ -1,0 +1,9 @@
+version: '3'
+services:
+  flask:
+    build: FlaskServer
+
+  nginx:
+    build: nginx
+    ports:
+      - 80:80
