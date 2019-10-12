@@ -4,6 +4,8 @@ services:
     build: FlaskServer
 
   nginx:
-    build: nginx
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
     ports:
       - 80:80
