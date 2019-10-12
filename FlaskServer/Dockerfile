@@ -6,7 +6,7 @@ RUN apt-get clean \
 RUN apt-get -y install python3-dev \
     && apt-get -y install build-essential
 
-COPY ./src /srv/flask-app
+COPY ./app /srv/flask-app
 COPY ./requirements.txt /srv/flask-app
 COPY ./uwsgi.ini /srv/flask-app
 
