@@ -9,8 +9,9 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building..'
-        sh 'pwd'
-        sh 'pip install -r requirements.txt --src /usr/local/src'
+        sh 'mv FlaskServer/requirements.txt FlaskServer/app/'
+        sh '''
+cd FlaskServer/app/ && pip install -r requirements.txt --src /usr/local/src'''
       }
     }
     stage('Test') {
