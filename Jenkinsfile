@@ -11,7 +11,7 @@ pipeline {
       steps {
         echo 'Testing..'
         sh 'pwd'
-        sh 'python test.py -v'
+        sh 'cd /srv/flask-app && python test.py -v'
       }
     }
     stage('Deploy') {
