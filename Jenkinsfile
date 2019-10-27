@@ -9,6 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building..'
+        sh 'pwd'
         sh 'pip install -r requirements.txt --src /usr/local/src'
       }
     }
