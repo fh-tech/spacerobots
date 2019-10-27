@@ -1,8 +1,7 @@
 pipeline {
   agent {
-    dockerfile {
-      dir 'FlaskServer'
-      args '--target test'
+    docker {
+      image 'python:3.7'
     }
 
   }
@@ -10,11 +9,13 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building..'
+        sh 'pip install -r requirements.txt --src /usr/local/src'
       }
     }
     stage('Test') {
       steps {
         echo 'Testing..'
+        sh 'python test.py -v'
       }
     }
     stage('Deploy') {
