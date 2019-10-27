@@ -6,3 +6,4 @@ MarkupSafe==1.0
 uWSGI==2.0.17.1
 Werkzeug==0.15.3
 Flask-API==1.1
+unittest-xml-reporting
