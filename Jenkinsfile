@@ -23,7 +23,7 @@ pipeline {
   }
   post {
     always {
-      junit '/*.xml'
+      junit '/var/jenkins_home/workspace/spacerobots_2_master/*.xml'
 
     }
 
