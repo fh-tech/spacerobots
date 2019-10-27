@@ -22,7 +22,7 @@ pipeline {
   }
   post {
     always {
-      junit '/srv/flask-app/*.xml'
+      junit '/*.xml'
 
     }
 
