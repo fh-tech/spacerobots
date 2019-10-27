@@ -10,7 +10,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Testing..'
-        sh 'whoami && cd /src/flask-app && ls -ahl'
+        sh 'cd /src/flask-app && ls -ahl'
         sh 'cd /srv/flask-app && python test.py -v'
       }
     }
