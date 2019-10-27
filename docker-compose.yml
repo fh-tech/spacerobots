@@ -2,10 +2,19 @@ version: '3'
 services:
   flask:
     build: FlaskServer
-
+    networks:
+      - space_robot-net
   nginx:
     build:
       context: .
       dockerfile: nginx/Dockerfile
-    ports:
-      - 80:80
+    labels:
+      - traefik.http.routers.my-container.rule=Host(`space.kudernatsch.at`)
+    networks:
+      - traefic-net
+      - space_robot-net
+networks:
+  space_robot-net:
+    driver: bridge
+  traefic-net:
+    external: true
