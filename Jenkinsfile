@@ -19,6 +19,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Deploying....'
+        sh "ssh docker@kudernatsch.at 'bash -s' < deploy.sh"
       }
     }
   }
