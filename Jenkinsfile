@@ -1,7 +1,8 @@
 pipeline {
   agent {
     dockerfile {
-      filename 'FlaskServer/Dockerfile'
+      filename 'Dockerfile'
+      dir 'FlaskServer'
     }
 
   }
