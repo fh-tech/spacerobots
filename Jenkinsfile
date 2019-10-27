@@ -10,7 +10,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Testing..'
-        sh 'pwd'
+        sh 'whoami && cd /src/flask-app && ls -ahl'
         sh 'cd /srv/flask-app && python test.py -v'
       }
     }
@@ -20,9 +20,11 @@ pipeline {
       }
     }
   }
- post {
+  post {
     always {
       junit '/srv/flask-app/*.xml'
+
     }
+
   }
 }
