@@ -1,13 +1,12 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'Dockerfile'
-      dir 'FlaskServer'
-    }
-
-  }
   stages {
     stage('Test') {
+      agent {
+        dockerfile {
+        filename 'Dockerfile'
+        dir 'FlaskServer'
+        }
+      }
       steps {
         echo 'Testing..'
         sh 'pwd'
@@ -17,6 +16,7 @@ pipeline {
       }
     }
     stage('Deploy') {
+      agent master
       steps {
         echo 'Deploying....'
         sh "ssh docker@kudernatsch.at 'bash -s' < deploy.sh"
