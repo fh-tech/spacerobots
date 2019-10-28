@@ -10,6 +10,7 @@ services:
       dockerfile: nginx/Dockerfile
     labels:
       - traefik.http.routers.my-container.rule=Host(`space.kudernatsch.at`)
+
     networks:
       - traefic-net
       - space_robot-net
