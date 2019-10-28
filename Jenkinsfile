@@ -16,7 +16,7 @@ pipeline {
       }
     }
     stage('Deploy') {
-      agent master
+      agent any
       steps {
         echo 'Deploying....'
         sh "ssh docker@kudernatsch.at 'bash -s' < deploy.sh"
