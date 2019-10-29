@@ -12,4 +12,4 @@ jobs:
         url: "http://jenkins.kudernatsch.at"
         user: "admin"
         token: ${{ secrets.TOKEN }}
-        job: "spacerobots,spacerobots_fail"
+        job: "spacerobots, spacerobots_fail"
